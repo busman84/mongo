@@ -7,12 +7,6 @@
 - Explain the difference between embedded and referenced documents, and how we use each to model relationships in MongoDB
 - Issue basic CRUD commands to a database from the Mongo Shell
 
-### Preparation
-- Create an Express app from scratch
-- Use and configure middleware like body-parser to handle form submissions
-
-## What is MongoDB - Intro (15 mins)
-
 #### Overview - Mongo & NoSQL Databases
 
 MongoDB is one of the new breeds of databases known as NoSQL databases. NoSQL databases are heavily used in realtime, big data and social media applications and generally called NoSQL because they do things a little differently than traditional SQL databases. We'll see what that means in a minute.
@@ -84,7 +78,7 @@ In MongoDB, we often _embed_ related data in a single document, you'll see an ex
 
 The supporters of MongoDB highlight the lack of table joins as a performance advantage since joins are expensive in terms of computer processing.
 
-## Installing, Creating a DB, and Inserting Documents - Codealong (15 mins)
+## Installing, Creating a DB, and Inserting Documents 
 
 #### Installation
 
@@ -184,7 +178,7 @@ In a moment we'll practice querying our database, but let's get more data in the
 > Note: Be sure to type the closing paren of the _insert_ method!
 
 
-## Querying Documents - Codealong (10 mins)
+## Querying Documents
 
 To list all documents in a collection, we use the _find_ method on the collection without any arguments:
 
@@ -223,7 +217,7 @@ The "1" indicates ascending order.
 
 [This documentation](http://docs.mongodb.org/manual/core/read-operations-introduction/) provides more detail about reading data.
 
-## Updating Data - Codealong (5 mins)
+## Updating Data
 
 In MongoDB, we use the `update()` method of collections by specifying the _update criteria_ (like we did with `find()`), and use the `$set` action to set the new value.
 
@@ -240,7 +234,7 @@ We used the `$inc` update operator to increase the existing value.
 
 Here is the [list of Update Operators](http://docs.mongodb.org/manual/reference/operator/update/) available.
 
-## Removing Data - Codealong (5 mins)
+## Removing Data
 
 We use the `remove()` method to data from collections.
 
@@ -254,7 +248,7 @@ Otherwise, specify a criteria to remove all documents that match it:
 >db.people.remove( { age: { $lt: 16 } } )
 ```
 
-## Data Modeling in MongoDB - Intro (10 mins)
+## Data Modeling in MongoDB 
 
 There are two ways to modeling related data in MongoDB:
 
@@ -271,7 +265,7 @@ Modeling data with the __embedded__ approach is different than what we've seen i
 
 To demonstrate __embedding__, we will add another person to our _people_ collection, but this time we want to include contact info. A person may have several ways to contact them, so we will be modeling a typical one-to-many relationship.
 
-## Modeling Data - Codealong (15 mins)
+## Modeling Data
 
 Let's walk through this command by entering it together:
 
@@ -330,7 +324,7 @@ Implementing the above scenario is as simple as assigning a _bankAccount_ docume
 Again, because there are no "joins" in MongoDB, retrieving a person's bank account information would require a separate query on the _bankAccounts_ collection.
 
 
-## Data Modeling Best Practices - Discussion (10 mins)
+## Data Modeling Best Practices
 
 MongoDB was designed from the ground up with application development in mind. More specifically, what can and can't be done in regards to data is enforced in your application, not the database itself (like in a SQL database).
 
@@ -344,8 +338,3 @@ Here are a few things to keep in mind:
 
 For more details regarding data modeling in MongoDB, start with [this section of mongoDB's documentation ](http://docs.mongodb.org/manual/core/data-modeling-introduction/) or this [hour long YouTube video](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
 
-
-## Conclusion (5 mins)
-- What are some of the differences between Mongo & Postgres databases?
-- How do you add a document to a collection in the Mongo shell?
-- Describe the difference between embedding & referencing documents. Give an example of when you might use each.
